@@ -19,6 +19,8 @@
 		3F02907F22E228430039130A /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02907E22E228430039130A /* String+Utility.swift */; };
 		3F02908222E228E90039130A /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02908122E228E90039130A /* EmailValidation.swift */; };
 		3F02908422E229230039130A /* DateFormatter+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02908322E229230039130A /* DateFormatter+Tools.swift */; };
+		3FC2621522E245D000BD59CE /* UITextField+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2621422E245D000BD59CE /* UITextField+Utility.swift */; };
+		3FEDE0BF23A93801003C2038 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDE0BE23A93801003C2038 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,9 @@
 		3F02907E22E228430039130A /* String+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
 		3F02908122E228E90039130A /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
 		3F02908322E229230039130A /* DateFormatter+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Tools.swift"; sourceTree = "<group>"; };
+		3FC2621422E245D000BD59CE /* UITextField+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Utility.swift"; sourceTree = "<group>"; };
+		3FEDE0BE23A93801003C2038 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		3FEDE0C023A93A2C003C2038 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +58,7 @@
 		3F02905122E21D9D0039130A = {
 			isa = PBXGroup;
 			children = (
+				3FEDE0C023A93A2C003C2038 /* README.md */,
 				3F02905D22E21D9D0039130A /* PNMTools */,
 				3F02905C22E21D9D0039130A /* Products */,
 			);
@@ -69,6 +75,7 @@
 		3F02905D22E21D9D0039130A /* PNMTools */ = {
 			isa = PBXGroup;
 			children = (
+				3FEDE0BD23A937F4003C2038 /* Core Data */,
 				3F02908022E228DD0039130A /* ValidationTools */,
 				3F02906D22E21E7E0039130A /* Foundation */,
 				3F02906622E21E200039130A /* Files */,
@@ -103,6 +110,7 @@
 				3F02907422E227370039130A /* Constraints+Utility.swift */,
 				3F02907222E2243B0039130A /* Notification+Utility.swift */,
 				3F02907C22E2281B0039130A /* UIActivityViewController+Utility.swift */,
+				3FC2621422E245D000BD59CE /* UITextField+Utility.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -114,6 +122,7 @@
 				3F02907E22E228430039130A /* String+Utility.swift */,
 				3F02907922E227FB0039130A /* CGFloat+Math.swift */,
 				3F02907722E227AF0039130A /* Dictionary+Utility.swift */,
+				3F02908322E229230039130A /* DateFormatter+Tools.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -122,9 +131,16 @@
 			isa = PBXGroup;
 			children = (
 				3F02908122E228E90039130A /* EmailValidation.swift */,
-				3F02908322E229230039130A /* DateFormatter+Tools.swift */,
 			);
 			path = ValidationTools;
+			sourceTree = "<group>";
+		};
+		3FEDE0BD23A937F4003C2038 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				3FEDE0BE23A93801003C2038 /* CoreDataManager.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,10 +223,12 @@
 			files = (
 				3F02907822E227AF0039130A /* Dictionary+Utility.swift in Sources */,
 				3F02906F22E21E8B0039130A /* Foundation+Utility.swift in Sources */,
+				3FC2621522E245D000BD59CE /* UITextField+Utility.swift in Sources */,
 				3F02907D22E2281B0039130A /* UIActivityViewController+Utility.swift in Sources */,
 				3F02907F22E228430039130A /* String+Utility.swift in Sources */,
 				3F02907522E227370039130A /* Constraints+Utility.swift in Sources */,
 				3F02908422E229230039130A /* DateFormatter+Tools.swift in Sources */,
+				3FEDE0BF23A93801003C2038 /* CoreDataManager.swift in Sources */,
 				3F02908222E228E90039130A /* EmailValidation.swift in Sources */,
 				3F02906C22E21E200039130A /* NetworkService.swift in Sources */,
 				3F02907A22E227FB0039130A /* CGFloat+Math.swift in Sources */,

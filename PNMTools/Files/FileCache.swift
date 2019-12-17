@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class ImageCache {
+open class FileCache {
 
     // MARK: - Properties
     
@@ -20,9 +20,10 @@ open class ImageCache {
     
     // MARK: - Init
     
-    public init(_ fileManager: FileManager = FileManager.default) throws {
+    public init(_ fileManager: FileManager = FileManager.default,
+                _ directory: FileManager.SearchPathDirectory = .cachesDirectory) throws {
         self.fileManager = fileManager
-        baseDirectory = fileManager.urls(for: .cachesDirectory,
+        baseDirectory = fileManager.urls(for: directory,
                                     in: .userDomainMask)
         guard let firstURL = baseDirectory.first else {
             throw NSError(domain: "Could not get base directory in provided FileManager",
@@ -34,33 +35,44 @@ open class ImageCache {
     // MARK: - Getters
     
     open func getImage(_ name: String) -> Data? {
+        var data: Data? = nil
         if let dat = inMemoryCache.object(forKey: name.ns) {
-            return Data(referencing: dat)
+            data =  Data(referencing: dat)
         }
         else {
             let url = baseURL.appendingPathComponent(name)
             do {
-                let data = try Data(contentsOf: url)
-                return data
+                data = try Data(contentsOf: url)
             }
             catch let err as NSError {
                 let isError = (err.code == 260 || err.code == 4)
                 print(isError ? "File not found" : "Error reading image: \(err)")
             }
         }
-        return nil
+        return data
     }
     
     // MARK: - Setters
     
-    open func saveImage(_ name: String, _ imageData: Data) {
-        inMemoryCache.setObject(imageData.ns, forKey: name.ns)
+    open func saveImage(_ name: String, _ blob: Data) {
+        inMemoryCache.setObject(blob.ns, forKey: name.ns)
+        
         let url = baseURL.appendingPathComponent(name)
-        do {
-            try imageData.write(to: url)
-        }
+        do { try blob.write(to: url) }
         catch {
             print("Error saving image: \(error)")
+        }
+    }
+    
+    open func deleteImage(_ name: String, _ removeFromCache: Bool = false) {
+        if removeFromCache {
+            inMemoryCache.removeObject(forKey: name.ns)
+        }
+    
+        let url = baseURL.appendingPathComponent(name)
+        do { try fileManager.removeItem(at: url) }
+        catch {
+            print("Error deleting image: \(error)")
         }
     }
     
@@ -68,15 +80,13 @@ open class ImageCache {
     
     open func deleteAllFiles() {
         do {
-            let files = try fileManager.contentsOfDirectory(at: baseURL,
-                                                            includingPropertiesForKeys: nil,
-                                                            options: .skipsPackageDescendants)
-            for file in files {
-                do {
-                    try fileManager.removeItem(at: file)
-                }
+            let urls = try fileManager.contentsOfDirectory(at: baseURL,
+                                                           includingPropertiesForKeys: nil,
+                                                           options: .skipsPackageDescendants)
+            urls.forEach {
+                do { try fileManager.removeItem(at: $0) }
                 catch {
-                    print("Error removing file: \(file) with error: \(error)")
+                    print("Error removing file: \($0) with error: \(error)")
                 }
             }
         }

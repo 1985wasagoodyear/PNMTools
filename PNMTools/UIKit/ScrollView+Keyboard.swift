@@ -6,7 +6,7 @@
 //  Copyright © 2019 K Y. All rights reserved.
 //
 
-// MARK: - Sample, not usable.
+// MARK: - Sample, not usable as-is
 
 import UIKit
 

@@ -28,6 +28,9 @@ public enum HTTPVerb: String {
     case POST = "POST"
 }
 
+public typealias DecodableResultHandler = (Result<Decodable, NetworkError>)->()
+public typealias DataHandler = (Data?)->()
+
 open class NetworkService {
     
     // MARK: - Properties
@@ -59,7 +62,7 @@ open class NetworkService {
                                     type: T.Type,
                                     verb: HTTPVerb = .GET,
                                     params: [String:String]?,
-                                    completion: @escaping (Result<T, NetworkError>)->()) {
+                                    completion: @escaping DecodableResultHandler) {
         if currentRequests?.contains(url) ?? false { return }
         currentRequests?.insert(url)
         dataTaskHelper(type: type,
@@ -80,7 +83,7 @@ open class NetworkService {
                                               url: URL,
                                               verb: HTTPVerb,
                                               params: [String:String]?,
-                                              completion: @escaping (Result<T, NetworkError>)->()) {
+                                              completion: @escaping DecodableResultHandler) {
         var urlRequest = URLRequest(url: url)
         urlRequest.allHTTPHeaderFields = params
         urlRequest.httpMethod = verb.rawValue
@@ -108,10 +111,10 @@ open class NetworkService {
             }.resume()
     }
     
-    open func image(url: URL,
+    open func data(url: URL,
                     verb: HTTPVerb = .GET,
                     params: [String:String]?,
-                    completion: @escaping (Data?)->()) {
+                    completion: @escaping DataHandler) {
         if currentRequests?.contains(url) ?? false { return }
         currentRequests?.insert(url)
         var urlRequest = URLRequest(url: url)
