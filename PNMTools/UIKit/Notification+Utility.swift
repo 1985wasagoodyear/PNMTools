@@ -10,7 +10,7 @@ import UIKit
 
 extension NotificationCenter {
     
-    static func registerKeyboardHandler(_ target: Any,
+    public static func registerKeyboardHandler(_ target: Any,
                                         willShow: Selector,
                                         willHide: Selector,
                                         object: Any? = nil) {
@@ -24,7 +24,7 @@ extension NotificationCenter {
                                                object: object)
     }
     
-    static func unregisterKeyboardHandler(_ target: Any,
+    public static func unregisterKeyboardHandler(_ target: Any,
                                           object: Any? = nil) {
         NotificationCenter.default.removeObserver(target,
                                                   name: UIResponder.keyboardWillShowNotification,

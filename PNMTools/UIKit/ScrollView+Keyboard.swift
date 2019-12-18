@@ -29,7 +29,7 @@ open class ScrollableViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
-    @objc func keyboardWillShow(_ sender: Notification) {
+    public @objc func keyboardWillShow(_ sender: Notification) {
         guard keyboardHeight == .zero,
             let activeField = activeField,
             let userInfo = sender.userInfo,
@@ -52,11 +52,12 @@ open class ScrollableViewController: UIViewController {
         // set new offset for scroll view
         UIView.animate(withDuration: animationDuration, animations: {
             // scroll to the position above keyboard 10 points
-            self.scrollView.contentOffset = CGPoint(x: self.lastOffset.x, y: collapseSpace + 10)
+            self.scrollView.contentOffset = CGPoint(x: self.lastOffset.x,
+                                                    y: collapseSpace + 10)
         })
     }
     
-    @objc func keyboardWillHide(_ sender: Notification) {
+    public @objc func keyboardWillHide(_ sender: Notification) {
         UIView.animate(withDuration: animationDuration) {
             self.constraintContentHeight.constant -= self.keyboardHeight
             self.scrollView.contentOffset = self.lastOffset

@@ -10,7 +10,7 @@ import UIKit
 
 extension UITextField {
     
-    func handleTextChange(_ target: Any,
+    public func handleTextChange(_ target: Any,
                           _ selector: Selector) {
         self.addTarget(target, action: selector, for: .editingChanged)
         if let del = target as? UITextFieldDelegate {

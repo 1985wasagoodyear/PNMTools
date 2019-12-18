@@ -76,20 +76,38 @@ open class CoreDataManager {
     
     public init() {}
     
-    deinit {}
+    deinit { }
     
     // MARK: - Core Data Saving Support
     
-    open func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+    /// saves in the chain: backgroundContext->mainContext->savingContext
+    open func saveAllChanges() {
+        // helper function for individually saving a context on its queue
+        // then continuing additional work
+        func saveHelper(for context: NSManagedObjectContext,
+                        _ completion: (()->Void)? = nil) {
+            if context.hasChanges {
+                context.perform {
+                    do {
+                        try context.save()
+                        completion?()
+                    } catch {
+                        let nserror = error as NSError
+                        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                    }
+                }
             }
         }
+        // miniature pyramid of doom
+        // is there a better way to represent this with less code?
+        saveHelper(for: backgroundContext) {
+            saveHelper(for: self.mainContext) {
+                saveHelper(for: self.savingContext)
+            }
+        }
+            
     }
+    
+    
     
 }

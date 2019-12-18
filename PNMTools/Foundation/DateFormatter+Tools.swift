@@ -149,7 +149,7 @@ public enum DateFormat {
 
 public enum TimeZoneType {
     case local, `default`, utc, custom(Int)
-    var timeZone: TimeZone {
+    public var timeZone: TimeZone {
         switch self {
         case .local: return NSTimeZone.local
         case .default: return NSTimeZone.default

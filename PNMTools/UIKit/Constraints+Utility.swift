@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIView {
-    func fill(_ superView: UIView) {
+    public func fill(_ superView: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         superView.addSubview(self)
         NSLayoutConstraint.activate([

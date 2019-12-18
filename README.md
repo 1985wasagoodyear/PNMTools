@@ -4,20 +4,20 @@ This repository is meant to be a sample space for basic boilerplate code.
 
 # Current Itemization:
 
-* Core Data
+* [Core Data](PNMTools/Core\ Data)
     * basic stack
     * Decodable Core Data basics
 
 * Validation Tools
-    * email
+    * [email](PNMTools/ValidationTools)
 
-* DateFormatters
+* [DateFormatter](PNMTools/Foundation)
 
-* Two-Tier Image Cache
+* [Two-Tier File Cache](PNMTools/Files)
 
 * UI Templates
-    * UIScrollView for Keyboard
-    * NSLayoutConstraints boilerplate
-    * NSNotification boilerplate
-    * UIActivityViewController toast
-    * UITextField boilerplate
+    * [UIScrollView for Keyboard](PNMTools/UIKit/ScrollView+Keyboard.swift)
+    * [NSLayoutConstraints boilerplate](PNMTools/UIKit/ScrollView+Keyboard.swift)
+    * [NSNotification boilerplate](PNMTools/UIKit/ScrollView+Keyboard.swift)
+    * [UIActivityViewController toast](PNMTools/UIKit/ScrollView+Keyboard.swift)
+    * [UITextField boilerplate](PNMTools/UIKit/ScrollView+Keyboard.swift)

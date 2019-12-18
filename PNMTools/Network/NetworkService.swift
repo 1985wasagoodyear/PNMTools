@@ -35,9 +35,9 @@ open class NetworkService {
     
     // MARK: - Properties
     
-    fileprivate var session: URLSession
+    var session: URLSession
     let allowRedundantRequests: Bool
-    private var currentRequests: Set<URL>?
+    var currentRequests: Set<URL>?
     
     // MARK: - Initialization
     

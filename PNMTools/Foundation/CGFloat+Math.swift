@@ -9,7 +9,7 @@
 import Foundation
 
 extension Double {
-    static func *(lhs: Double, rhs: Int) -> Double {
+    public static func *(lhs: Double, rhs: Int) -> Double {
         return lhs * Double(rhs)
     }
 }

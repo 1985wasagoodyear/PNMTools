@@ -9,7 +9,7 @@
 import Foundation
 
 extension Dictionary where Value == Int {
-    mutating func decrement(_ key: Key, by val: Int = 1, removeIfEqual: Bool = false) {
+    mutating public func decrement(_ key: Key, by val: Int = 1, removeIfEqual: Bool = false) {
         guard let count = self[key] else { return }
         if removeIfEqual == true && count == val {
             self.removeValue(forKey: key)

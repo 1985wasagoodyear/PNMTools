@@ -19,8 +19,12 @@
 		3F02907F22E228430039130A /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02907E22E228430039130A /* String+Utility.swift */; };
 		3F02908222E228E90039130A /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02908122E228E90039130A /* EmailValidation.swift */; };
 		3F02908422E229230039130A /* DateFormatter+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02908322E229230039130A /* DateFormatter+Tools.swift */; };
+		3F9A795E23AAC4C500494DA2 /* NetworkOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F9A795D23AAC4C500494DA2 /* NetworkOperation.h */; };
+		3F9A796023AAC4C900494DA2 /* NetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9A795F23AAC4C900494DA2 /* NetworkOperation.m */; };
 		3FC2621522E245D000BD59CE /* UITextField+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2621422E245D000BD59CE /* UITextField+Utility.swift */; };
 		3FEDE0BF23A93801003C2038 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDE0BE23A93801003C2038 /* CoreDataManager.swift */; };
+		3FEDE0C323A960C8003C2038 /* NWMOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FEDE0C223A960C8003C2038 /* NWMOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FEDE0C523A960CC003C2038 /* NWMOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDE0C423A960CC003C2038 /* NWMOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +43,13 @@
 		3F02907E22E228430039130A /* String+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
 		3F02908122E228E90039130A /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
 		3F02908322E229230039130A /* DateFormatter+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Tools.swift"; sourceTree = "<group>"; };
+		3F9A795D23AAC4C500494DA2 /* NetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkOperation.h; sourceTree = "<group>"; };
+		3F9A795F23AAC4C900494DA2 /* NetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkOperation.m; sourceTree = "<group>"; };
 		3FC2621422E245D000BD59CE /* UITextField+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Utility.swift"; sourceTree = "<group>"; };
 		3FEDE0BE23A93801003C2038 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		3FEDE0C023A93A2C003C2038 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3FEDE0C223A960C8003C2038 /* NWMOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWMOperation.h; sourceTree = "<group>"; };
+		3FEDE0C423A960CC003C2038 /* NWMOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWMOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,7 @@
 		3F02905D22E21D9D0039130A /* PNMTools */ = {
 			isa = PBXGroup;
 			children = (
+				3FEDE0C123A960BD003C2038 /* Multithreading */,
 				3FEDE0BD23A937F4003C2038 /* Core Data */,
 				3F02908022E228DD0039130A /* ValidationTools */,
 				3F02906D22E21E7E0039130A /* Foundation */,
@@ -143,6 +152,25 @@
 			path = "Core Data";
 			sourceTree = "<group>";
 		};
+		3FEDE0C123A960BD003C2038 /* Multithreading */ = {
+			isa = PBXGroup;
+			children = (
+				3FEDE0C623A960CF003C2038 /* NWMOperation */,
+			);
+			path = Multithreading;
+			sourceTree = "<group>";
+		};
+		3FEDE0C623A960CF003C2038 /* NWMOperation */ = {
+			isa = PBXGroup;
+			children = (
+				3FEDE0C223A960C8003C2038 /* NWMOperation.h */,
+				3FEDE0C423A960CC003C2038 /* NWMOperation.m */,
+				3F9A795D23AAC4C500494DA2 /* NetworkOperation.h */,
+				3F9A795F23AAC4C900494DA2 /* NetworkOperation.m */,
+			);
+			path = NWMOperation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -150,7 +178,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F9A795E23AAC4C500494DA2 /* NetworkOperation.h in Headers */,
 				3F02906022E21D9D0039130A /* PNMTools.h in Headers */,
+				3FEDE0C323A960C8003C2038 /* NWMOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +216,7 @@
 				TargetAttributes = {
 					3F02905A22E21D9D0039130A = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -222,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F02907822E227AF0039130A /* Dictionary+Utility.swift in Sources */,
+				3F9A796023AAC4C900494DA2 /* NetworkOperation.m in Sources */,
 				3F02906F22E21E8B0039130A /* Foundation+Utility.swift in Sources */,
 				3FC2621522E245D000BD59CE /* UITextField+Utility.swift in Sources */,
 				3F02907D22E2281B0039130A /* UIActivityViewController+Utility.swift in Sources */,
@@ -233,6 +265,7 @@
 				3F02906C22E21E200039130A /* NetworkService.swift in Sources */,
 				3F02907A22E227FB0039130A /* CGFloat+Math.swift in Sources */,
 				3F02906B22E21E200039130A /* FileCache.swift in Sources */,
+				3FEDE0C523A960CC003C2038 /* NWMOperation.m in Sources */,
 				3F02907322E2243B0039130A /* Notification+Utility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +398,7 @@
 		3F02906422E21D9D0039130A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -381,6 +415,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ky.PNMTools;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -389,6 +424,7 @@
 		3F02906522E21D9D0039130A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
