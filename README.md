@@ -26,3 +26,8 @@ This repository is meant to be a sample space for basic boilerplate code.
     * [Thread-safe Array](PNMTools/Multithreading/Thread-safety/BarrierArray.swift)
     * [Thread-safe Container](PNMTools/Multithreading/Thread-safety/BarrierValue.swift)
     * [RateLimiter](PNMTools/Multithreading/Thread-safety/BarrierArray.swift)
+
+
+* [MVVM Templates, in-progress](PNMTools/MVVM Template)
+    * added sample project for use(DummyNetworkingProject)
+    * still need to perform type-erasure

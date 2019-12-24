@@ -38,6 +38,7 @@ open class NetworkService {
     var session: URLSession
     let allowRedundantRequests: Bool
     var currentRequests: Set<URL>?
+    let decoder: JSONDecoder = JSONDecoder()
     
     // MARK: - Initialization
     
@@ -87,13 +88,14 @@ open class NetworkService {
         var urlRequest = URLRequest(url: url)
         urlRequest.allHTTPHeaderFields = params
         urlRequest.httpMethod = verb.rawValue
-        session.dataTask(with: urlRequest)
-        { (data, response, error) in
+        session.dataTask(with: urlRequest) { (data, response, error) in
             if let _ = error {
+                // handle error here, specifically
                 completion(Result.failure(.connectionError))
                 return
             }
             guard let _ = response else {
+                // handle response here, specifically
                 completion(Result.failure(.serverError))
                 return
             }
@@ -102,7 +104,7 @@ open class NetworkService {
                 return
             }
             do {
-                let result = try JSONDecoder().decode(T.self, from: safeData)
+                let result = try self.decoder.decode(T.self, from: safeData)
                 completion(Result.success(result))
             }
             catch let err {
