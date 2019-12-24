@@ -21,6 +21,9 @@
 		3F02908422E229230039130A /* DateFormatter+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F02908322E229230039130A /* DateFormatter+Tools.swift */; };
 		3F9A795E23AAC4C500494DA2 /* NetworkOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F9A795D23AAC4C500494DA2 /* NetworkOperation.h */; };
 		3F9A796023AAC4C900494DA2 /* NetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9A795F23AAC4C900494DA2 /* NetworkOperation.m */; };
+		3FA734AD23B26F7C00B63AE8 /* BarrierArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA734AC23B26F7C00B63AE8 /* BarrierArray.swift */; };
+		3FA734AF23B26F8000B63AE8 /* BarrierValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA734AE23B26F8000B63AE8 /* BarrierValue.swift */; };
+		3FA734B123B26F8600B63AE8 /* RateLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA734B023B26F8600B63AE8 /* RateLimiter.swift */; };
 		3FC2621522E245D000BD59CE /* UITextField+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2621422E245D000BD59CE /* UITextField+Utility.swift */; };
 		3FEDE0BF23A93801003C2038 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDE0BE23A93801003C2038 /* CoreDataManager.swift */; };
 		3FEDE0C323A960C8003C2038 /* NWMOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FEDE0C223A960C8003C2038 /* NWMOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,6 +48,9 @@
 		3F02908322E229230039130A /* DateFormatter+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Tools.swift"; sourceTree = "<group>"; };
 		3F9A795D23AAC4C500494DA2 /* NetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkOperation.h; sourceTree = "<group>"; };
 		3F9A795F23AAC4C900494DA2 /* NetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkOperation.m; sourceTree = "<group>"; };
+		3FA734AC23B26F7C00B63AE8 /* BarrierArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarrierArray.swift; sourceTree = "<group>"; };
+		3FA734AE23B26F8000B63AE8 /* BarrierValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarrierValue.swift; sourceTree = "<group>"; };
+		3FA734B023B26F8600B63AE8 /* RateLimiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateLimiter.swift; sourceTree = "<group>"; };
 		3FC2621422E245D000BD59CE /* UITextField+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Utility.swift"; sourceTree = "<group>"; };
 		3FEDE0BE23A93801003C2038 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		3FEDE0C023A93A2C003C2038 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -144,6 +150,16 @@
 			path = ValidationTools;
 			sourceTree = "<group>";
 		};
+		3FA734AB23B26F6700B63AE8 /* Thread-safety */ = {
+			isa = PBXGroup;
+			children = (
+				3FA734AC23B26F7C00B63AE8 /* BarrierArray.swift */,
+				3FA734AE23B26F8000B63AE8 /* BarrierValue.swift */,
+				3FA734B023B26F8600B63AE8 /* RateLimiter.swift */,
+			);
+			path = "Thread-safety";
+			sourceTree = "<group>";
+		};
 		3FEDE0BD23A937F4003C2038 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +171,7 @@
 		3FEDE0C123A960BD003C2038 /* Multithreading */ = {
 			isa = PBXGroup;
 			children = (
+				3FA734AB23B26F6700B63AE8 /* Thread-safety */,
 				3FEDE0C623A960CF003C2038 /* NWMOperation */,
 			);
 			path = Multithreading;
@@ -255,7 +272,10 @@
 				3F02907822E227AF0039130A /* Dictionary+Utility.swift in Sources */,
 				3F9A796023AAC4C900494DA2 /* NetworkOperation.m in Sources */,
 				3F02906F22E21E8B0039130A /* Foundation+Utility.swift in Sources */,
+				3FA734AD23B26F7C00B63AE8 /* BarrierArray.swift in Sources */,
+				3FA734B123B26F8600B63AE8 /* RateLimiter.swift in Sources */,
 				3FC2621522E245D000BD59CE /* UITextField+Utility.swift in Sources */,
+				3FA734AF23B26F8000B63AE8 /* BarrierValue.swift in Sources */,
 				3F02907D22E2281B0039130A /* UIActivityViewController+Utility.swift in Sources */,
 				3F02907F22E228430039130A /* String+Utility.swift in Sources */,
 				3F02907522E227370039130A /* Constraints+Utility.swift in Sources */,
