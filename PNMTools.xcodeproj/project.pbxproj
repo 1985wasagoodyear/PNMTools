@@ -37,6 +37,7 @@
 		3FEDE0BF23A93801003C2038 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDE0BE23A93801003C2038 /* CoreDataManager.swift */; };
 		3FEDE0C323A960C8003C2038 /* NWMOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FEDE0C223A960C8003C2038 /* NWMOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FEDE0C523A960CC003C2038 /* NWMOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEDE0C423A960CC003C2038 /* NWMOperation.m */; };
+		3FFB113A242ABFD8006FCA36 /* DispatchThrottle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB1139242ABFD8006FCA36 /* DispatchThrottle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		3FEDE0C023A93A2C003C2038 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3FEDE0C223A960C8003C2038 /* NWMOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWMOperation.h; sourceTree = "<group>"; };
 		3FEDE0C423A960CC003C2038 /* NWMOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWMOperation.m; sourceTree = "<group>"; };
+		3FFB1139242ABFD8006FCA36 /* DispatchThrottle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchThrottle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 		3FEDE0C123A960BD003C2038 /* Multithreading */ = {
 			isa = PBXGroup;
 			children = (
+				3FFB1139242ABFD8006FCA36 /* DispatchThrottle.swift */,
 				3FA734AB23B26F6700B63AE8 /* Thread-safety */,
 				3FEDE0C623A960CF003C2038 /* NWMOperation */,
 			);
@@ -358,6 +361,7 @@
 			files = (
 				3FA734B423B2744200B63AE8 /* Observable.swift in Sources */,
 				3F02907822E227AF0039130A /* Dictionary+Utility.swift in Sources */,
+				3FFB113A242ABFD8006FCA36 /* DispatchThrottle.swift in Sources */,
 				3FA734B623B2759E00B63AE8 /* ViewModelTemplate.swift in Sources */,
 				3F9A796023AAC4C900494DA2 /* NetworkOperation.m in Sources */,
 				3F02906F22E21E8B0039130A /* Foundation+Utility.swift in Sources */,

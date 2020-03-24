@@ -22,10 +22,13 @@ This repository is meant to be a sample space for basic boilerplate code.
     * [UIActivityViewController toast](PNMTools/UIKit/ScrollView+Keyboard.swift)
     * [UITextField boilerplate](PNMTools/UIKit/ScrollView+Keyboard.swift)
 
+
+* [DispatchThrottle](PNMTools/Multithreading/DispatchThrottle.swift)
+
 * Thread-safety and Access Control (in-progress)
     * [Thread-safe Array](PNMTools/Multithreading/Thread-safety/BarrierArray.swift)
     * [Thread-safe Container](PNMTools/Multithreading/Thread-safety/BarrierValue.swift)
-    * [RateLimiter](PNMTools/Multithreading/Thread-safety/BarrierArray.swift)
+    * [RateLimiter](PNMTools/Multithreading/Thread-safety/RateLimiter.swift)
 
 
 * [MVVM Templates, in-progress](PNMTools/MVVM Template)
