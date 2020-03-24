@@ -9,7 +9,7 @@
 import Foundation
 
 /// basic Protocol template & definition
-public protocol ViewModelTemplateProtocol: class {
+public protocol ViewModelBaseProtocol: class {
     typealias DataResult = Result<DataType, Error>
     typealias ViewModelUpdateHandler = (DataResult)->Void
     
@@ -20,19 +20,16 @@ public protocol ViewModelTemplateProtocol: class {
     func unbind()
 }
 
-/// sample model definition
-public struct SampleModel: Decodable { }
-
 /// sample error definition
 public enum ViewModelError: Error {
     case empty
 }
 
 /// sample ViewModelTemplate
-open class ViewModelTemplate: ViewModelTemplateProtocol {
+open class ViewModelBase: ViewModelBaseProtocol {
     
     // TODO: - perform type-erasure here
-    public typealias DataType = [SampleModel]
+    public typealias DataType = Decodable
     
     // MARK: - Properties
     

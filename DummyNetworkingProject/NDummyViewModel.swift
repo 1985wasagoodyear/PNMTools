@@ -1,48 +1,44 @@
 //
-//  ViewModelNetworkingTemplate.swift
-//  PNMTools
+//  NDummyViewModel.swift
+//  DummyNetworkingProject
 //
 //  Created by K Y on 12/24/19.
 //  Copyright © 2019 K Y. All rights reserved.
 //
 
-// presently, none of this should actually be used as-is, out-of-the-box
-
 import Foundation
+import PNMTools
 
-protocol ViewModelNetworkingTemplateProtocol: ViewModelTemplateProtocol {
-    
-    // issue with this...?
+protocol NDummyViewModelProtocol: DummyViewModelBase {
     func getData(from url: URL)
 }
 
-
-class ViewModelNetworkingTemplate: ViewModelTemplate {
-    
+class NDummyViewModel: ViewModelTemplate {
     var networker = NetworkService()
-    
 }
 
-extension ViewModelNetworkingTemplate: ViewModelNetworkingTemplateProtocol {
+extension NDummyViewModel: NDummyViewModelProtocol {
     
-    // issue with this...?
     func getData(from url: URL) {
+        let completion: (Result<DataType, NetworkError>)->Void = { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+                case .success(let val):
+                    // issue persists with type-definition, here
+                    if let val = val as? DataType {
+                        self.success(val: val)
+                    }
+                    else {
+                        fatalError("Where did we go wrong")
+                }
+                case .failure(let err):
+                    self.handle(error: err)
+            }
+        }
         networker.dataTask(url: url,
                            type: DataType.self,
-                           params: nil) { [weak self] (result) in
-                            guard let self = self else { return }
-                            switch result {
-                                case .success(let val):
-                                    if let val = val as? DataType {
-                                        self.success(val: val)
-                                    }
-                                    else {
-                                        fatalError("Where did we go wrong")
-                                    }
-                                case .failure(let err):
-                                    self.handle(error: err)
-                            }
-        }
+                           params: nil,
+                           completion: completion)
     }
     
     func success(val: DataType) {
@@ -78,3 +74,6 @@ extension ViewModelNetworkingTemplate: ViewModelNetworkingTemplateProtocol {
         }
     }
 }
+
+
+

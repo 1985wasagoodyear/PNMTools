@@ -21,7 +21,7 @@ class BarrierValue<T> {
     
     // MARK: - Internal Properties
     
-    fileprivate let queue = DispatchQueue.global(qos: .utility)
+    fileprivate let queue = DispatchQueue(label: "yu.BarrierArray", qos: .utility, attributes: .concurrent)
     fileprivate var _val: T
     
     // MARK: - Initializer
